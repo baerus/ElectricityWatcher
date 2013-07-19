@@ -6,37 +6,36 @@
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
 		function makeFoto() {
-			alert("im MAKE FOTO");
 			var options = {
 				// sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
 				destinationType: Camera.DestinationType.FILE_URI,
 				quality: 10
-			}
+			};
 			navigator.camera.getPicture(onSuccess, onFail, options);
 		}
 	
 		function onSuccess(imageURI) {
-			alert("xxxSUCCESS!");
 			var image = document.getElementById('largeImage');
 			image.src = imageURI;
 			image.style.display = 'block';
-			alert("URI: " + imageURI);
 		}
 		
 		function onFail(message) {
-			alert("xxxFAIL! " + message);
+			alert("The task failed, read the message: " + message);
 		}
 	</script>
 </head>
+
 <body>
 	Stromsens
 	<h1>Moins</h1>
 	
-	<a href="newSites/nr2.html" title="Brauchst ne neue Seite? ;)">Seite 2</a>
+	<a href="newSites/nr2.html">Seite 2</a>
 	
-	<p onclick="makeFoto(); alert('Done');">Hey!</p>
+	<p onclick="makeFoto();">Hey!</p>
 	Huhu<br>
 	Bild:
 	<img style="display:none;" id="largeImage" src="" />
 </body>
+
 </html>
