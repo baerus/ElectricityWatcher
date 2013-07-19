@@ -9,19 +9,22 @@
 			alert("im MAKE FOTO");
 			var options = {
 				// sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-				destinationType: Camera.DestinationType.DATA_URL,
+				destinationType: Camera.DestinationType.FILE_URI,
 				quality: 10
 			}
 			navigator.camera.getPicture(onSuccess, onFail, options);
 		}
 	
 		function onSuccess(imageURI) {
-			alert("success!");
+			alert("xxxSUCCESS!");
+			var image = document.getElementById('largeImage');
+			image.src = imageURI;
+			image.style.display = 'block';
 			alert("URI: " + imageURI);
 		}
 		
 		function onFail(message) {
-			alert("FAIL! " + message);
+			alert("xxxFAIL! " + message);
 		}
 	</script>
 </head>
@@ -32,6 +35,8 @@
 	<a href="newSites/nr2.html" title="Brauchst ne neue Seite? ;)">Seite 2</a>
 	
 	<p onclick="makeFoto(); alert('Done');">Hey!</p>
-	Huhu
+	Huhu<br>
+	Bild:
+	<img style="display:none;" id="largeImage" src="" />
 </body>
 </html>
