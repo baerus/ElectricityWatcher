@@ -3,13 +3,13 @@
 <head>
 	<title> Fuck off</title>
 	
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-	<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
 		function makeFoto() {
 			alert("im MAKE FOTO");
 			var options = {
 				// sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-				// destinationType: Camera.DestinationType.FILE_URI,
+				destinationType: Camera.DestinationType.DATA_URL,
 				quality: 10
 			}
 			navigator.camera.getPicture(onSuccess, onFail, options);
