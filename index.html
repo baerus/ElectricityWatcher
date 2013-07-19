@@ -6,7 +6,17 @@
     <script type="text/javascript" src="js/general.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
-		function makeFoto() {
+        document.addEventListener("deviceready", onDeviceReady, true);
+
+        // PhoneGap is ready
+        function onDeviceReady() {
+            console.log("ready!! :)");
+            alert('ready :)');
+            // var db = openDB();
+            // db.transaction(populateDB, errorCB, successCB);
+        }
+
+        function makeFoto() {
 			var options = {
 				// sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
 				destinationType: Camera.DestinationType.FILE_URI,
@@ -24,27 +34,12 @@
 		function onFail(message) {
 			alert("The task failed, read the message: " + message);
 		}
-	</script>
 
-    <script type="text/javascript">
-        alert('loaded v1');
 
-        // PhoneGap is ready
-        function onDeviceReady() {
-            console.log("ready!! :)");
-            alert('ready :)');
-            // var db = openDB();
-            // db.transaction(populateDB, errorCB, successCB);
-        }
-
-        function onLoad() {
-            // Wait until PhoneGap is ready
-            document.addEventListener("deviceready", function() {alert('pam!');}, true);
-        }
     </script>
 </head>
 
-<body onload="onLoad()">
+<body>
 	Stromsens
 	<h1>Moins</h1>
 	
