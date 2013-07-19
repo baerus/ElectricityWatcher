@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title> Fuck off</title>
+	
+	<script type="text/javascript" src="js/cordova.js"></script>
 	<script type="text/javascript">
 		function makeFoto() {
 			alert("im MAKE FOTO");
 			var options = {
-				sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-				destinationType: Camera.DestinationType.FILE_URI,
+				// sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+				// destinationType: Camera.DestinationType.FILE_URI,
 				quality: 10
 			}
 			navigator.camera.getPicture(onSuccess, onFail, options);
