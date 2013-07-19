@@ -4,21 +4,27 @@
     <title>Zweite Seite</title>
 
     <script type="text/javascript" src="../js/general.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
     <script type="text/javascript">
         alert('loaded v2');
-        // Wait until PhoneGap is ready
-        document.addEventListener("deviceready", function() {alert('pam!');}, true);
 
         // PhoneGap is ready
         function onDeviceReady() {
+            console.log("ready!! :)");
             alert('ready :)');
             // var db = openDB();
             // db.transaction(populateDB, errorCB, successCB);
         }
+
+        function onLoad() {
+            // Wait until PhoneGap is ready
+            document.addEventListener("deviceready", function() {alert('pam!');}, true);
+        }
     </script>
 </head>
 
-<body>
+<body onload="onLoad()">
     Yo, das ist die <p>Nummero <b><u>2</u></b></p> ...
 
     <button onclick="showFirstDBEntry();">DB Test</button>
