@@ -1,7 +1,7 @@
 function showFirstDBEntry() {
-    alert('1');
+    alert('DBbbbbbbb');
     var db = openDB();
-    db.transaction(viewAllRows, querySuccess);
+    db.transaction(viewAllRows, queryError, querySuccess);
 }
 
 function openDB() {
@@ -31,6 +31,18 @@ function viewAllRows(tx) {
 }
 
 function querySuccess(tx, results) {
-    console.log(results);
-    alert(results);
+    alert('Im QUERY SUCCESS');
+    var s = "Results are the following: \n\n";
+    for (var i=0; i<results.rows.length; i++) {
+        // Each row is a standard JavaScript array indexed by
+        // column names.
+        var row = results.rows.item(i);
+        s = s + row['data'] + " (ID "+row['id']+")\n";
+    }
+    alert(s);
+}
+
+function queryError(tx, error) {
+    alert('Im QUERY ERROR');
+    alert(error.message + ' ' + error.code);
 }
