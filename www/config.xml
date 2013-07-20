@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<widget xmlns       = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "id.iddd.iid"
-        versionCode = "10"
-        version     = "1.1.0">
-        
-<name>
-	Electricity Watcher :)
-</name>
+<widget xmlns = "http://www.w3.org/ns/widgets/"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "de.hsbremen.mfischer"
+    version   = "0.0.1">
 
-<description>
-	YEAH! Watches your electricity!
-</description>
+    <name>Electricity Watcher :)</name>
+    <description>YEAH! Watches your electricity!</description>
+    <author href="http://google.de" email="hihi@haha.de">Marcus Fischer</author>
 
-<author href="http://google.de" email="hihi@haha.de">
-	Marcus Fischer
-</author>
-
-
-
+    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" /> <!-- remove the upper bar on iOS and Android -->
 </widget>
