@@ -8,3 +8,7 @@ a {
     width: 100px;
     margin-bottom: 50px;
 }
+
+button {
+    padding: 20px;
+}
