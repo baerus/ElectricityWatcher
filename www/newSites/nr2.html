@@ -3,30 +3,18 @@
 <head>
     <title>Zweite Seite</title>
 
-    <script type="text/javascript" src="../www/js/general.js"></script>
-    <script type="text/javascript" src="../cordova.js"></script>
-
-    <script type="text/javascript">
-        alert('loaded v2');
-
-        // PhoneGap is ready
-        function onDeviceReady() {
-            console.log("ready!! :)");
-            // var db = openDB();
-            // db.transaction(populateDB, errorCB, successCB);
-        }
-
-        function onLoad() {
-            // Wait until PhoneGap is ready
-            document.addEventListener("deviceready", function() {alert('pam!');}, true);
-        }
-    </script>
+    <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/general.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/database.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/jquery-2.0.3.js.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/general.css">
 </head>
 
 <body onload="onLoad();">
     Yo, das ist die <p>Nummero <b><u>2</u></b></p>
 
-    <button onclick="test();">Test</button>
     <button onclick="showFirstDBEntry();">DB Test</button>
 </body>
 
