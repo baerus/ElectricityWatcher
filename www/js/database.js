@@ -30,7 +30,7 @@ function successCB() {
 
 function viewAllRows(tx) {
     alert('Want to view all rows!');
-    tx.executeSql('SELECT * FROM DEMO');
+    tx.executeSql('SELECT * FROM DEMO', [], querySuccess);
 }
 
 function querySuccess(tx, results) {
