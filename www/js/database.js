@@ -43,10 +43,10 @@ function querySuccess(tx, results) {
     }
 
     var s = "Results are the following: \n\n";
-//    for (var i=0; i<results.rows.length; i++) {
-//        var row = results.rows.item(i);
-//        s = s + row['data'] + " (ID "+row['id']+")\n";
-//    }
+    for (var i=0; i<results.rows.length; i++) {
+        var row = results.rows.item(i);
+        s = s + row['data'] + " (ID "+row['id']+")\n";
+    }
     alert(s);
 }
 
