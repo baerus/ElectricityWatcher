@@ -8,6 +8,6 @@ function bodyOnLoad() {
 // PhoneGap is ready. Populate DB
 function onDeviceReady() {
     var db = openDB();
-    db.transaction(populateDB, errorCB, successCB);
+    db.transaction(populateDB);
 }
 

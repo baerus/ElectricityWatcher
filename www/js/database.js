@@ -15,16 +15,6 @@ function populateDB(tx) {
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
 
-// Transaction error callback
-function errorCB(tx, err) {
-    alert("Error processing SQL: "+err);
-}
-
-// Transaction success callback
-function successCB() {
-    alert("success!");
-}
-
 function viewAllRows(tx) {
     tx.executeSql('SELECT * FROM DEMO', [], querySuccess);
 }
