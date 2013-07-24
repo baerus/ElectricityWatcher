@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Electricity Watcher</title>
@@ -9,15 +9,34 @@
     <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/libs/jquery-2.0.3.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/jquery-ui.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/jquery-ui-timepicker-addon.js"></script>
     <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/jquery-ui-timepicker-addon.css">
    </head>
 
 <body onload="bodyOnLoad();">
-	<a href="newSites/nr2.html">Seite 2</a>
-	
-	<p onclick="makeFoto();" class="TestKlasse">Hey!</p>
+    <form action="javascript:calculateKWPrice($('#kwBeforeComma'), $('#kwAfterComma'))">
+        <div>
+            Früheste Ablese am:
+            <input id="firstDate" type="text" readonly="true"/>
+        </div>
+        <div>
+            <span>KW/h </span>
+            <span onclick="showDatePicker()">heute </span>
+            <input id="kwBeforeComma" type="number" class="kwFieldBeforeComma"/>
+            .
+            <input  id="kwAfterComma" type="number" class="kwFieldAfterComma">
+        </div>
+        <button type="submit">Berechnen!</button>
+    </form>
+    <div class="statisticAnker">
+	    <a href="newSites/nr2.html">Statistiken anschauen</a>
+    </div>
+	<!--<p onclick="makeFoto();" class="TestKlasse">Hey!</p>-->
 
-	Bild:
-	<img style="display:none;" id="largeImage" src="" />
+	<!--Bild:-->
+	<!--<img style="display:none;" id="largeImage" src="" />-->
 </body>
 </html>

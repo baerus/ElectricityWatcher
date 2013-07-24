@@ -1,14 +1,16 @@
 a {
     font-size: 20px;
     color: red;
-    padding: 100px;
 }
 
-.TestKlasse {
-    width: 100px;
-    margin-bottom: 50px;
+.kwFieldBeforeComma {
+    width: 80px;
 }
 
-button {
-    padding: 20px;
+.kwFieldAfterComma {
+    width: 40px;
+}
+
+.statisticAnker {
+    margin-top: 20px;
 }

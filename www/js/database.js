@@ -34,14 +34,6 @@ function viewAllRows(tx) {
 }
 
 function querySuccess(tx, results) {
-    alert('Im QUERY SUCCESS');
-    if(results == null) {
-        alert('yolo');
-    }
-    else {
-        alert('swag');
-    }
-
     var s = "Results are the following: \n\n";
     for (var i=0; i<results.rows.length; i++) {
         var row = results.rows.item(i);
