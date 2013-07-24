@@ -1,5 +1,4 @@
 function showFirstDBEntry() {
-    alert('DBbbbbbbb');
     var db = openDB();
     db.transaction(viewAllRows, queryError, querySuccess);
 }
@@ -10,12 +9,10 @@ function openDB() {
 
 // Populate the database
 function populateDB(tx) {
-    alert('Populating DB');
     tx.executeSql('DROP TABLE IF EXISTS DEMO');
     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT)');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-    alert('Populated DB - hopefully successfully');
 }
 
 // Transaction error callback
@@ -29,7 +26,6 @@ function successCB() {
 }
 
 function viewAllRows(tx) {
-    alert('Want to view all rows!');
     tx.executeSql('SELECT * FROM DEMO', [], querySuccess);
 }
 

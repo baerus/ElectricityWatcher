@@ -17,17 +17,21 @@
    </head>
 
 <body onload="bodyOnLoad();">
-    <form action="javascript:calculateKWPrice($('#kwBeforeComma'), $('#kwAfterComma'))">
-        <div>
+    <form action="javascript:calculateKWPrice($('#firstDate').val(), $('#firstKWhBeforeComma').val(), $('#firstKWhAfterComma').val(), $('#kwhBeforeComma').val(), $('#kwhAfterComma').val())">
+        <div class="kwhDiv">
             Früheste Ablese am:
             <input id="firstDate" type="text" readonly="true"/>
-        </div>
-        <div>
-            <span>KW/h </span>
-            <span onclick="showDatePicker()">heute </span>
-            <input id="kwBeforeComma" type="number" class="kwFieldBeforeComma"/>
+            mit KW/h:
+            <input id="firstKWhBeforeComma" type="number" class="kwFieldBeforeComma">
             .
-            <input  id="kwAfterComma" type="number" class="kwFieldAfterComma">
+            <input  id="firstKWhAfterComma" type="number" class="kwFieldAfterComma">
+        </div>
+        <div class="kwhDiv">
+            <span>KW/h </span>
+            <span>heute </span>
+            <input id="kwhBeforeComma" type="number" class="kwFieldBeforeComma"/>
+            .
+            <input  id="kwhAfterComma" type="number" class="kwFieldAfterComma">
         </div>
         <button type="submit">Berechnen!</button>
     </form>

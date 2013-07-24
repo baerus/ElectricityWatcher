@@ -1,23 +1,19 @@
-function showDatePicker() {
-    alert('DP');
-}
+function calculateKWPrice(firstDateString, firstKWhBeforeComma, firstKWhAfterComma, kwBeforeComma, kwAfterComma) {
 
-function calculateKWPrice(kwBeforeComma, kwAfterComma) {
-    var today = new Date().getTime(); // heute in Milliseconds
-    var firstDateString = $('#firstDate').val();
+    // TODO: Das muss auch iwie mit DateFormat oder sowas gehen...
     var day = firstDateString.split('.')[0];
-    var month = firstDateString.split('.')[1];
+    var month = firstDateString.split('.')[1] - 1;
     var year = firstDateString.split('.')[2].substr(0, 4);
     var hour = firstDateString.split(' ')[1].split(':')[0];
     var minute = firstDateString.split(' ')[1].split(':')[1];
     var second = firstDateString.split(' ')[1].split(':')[2];
 
-    var firstDate = new Date(year, month, day, hour, minute, second).getTime(); // Wahl in Milliseconds
-    console.log('d: ' + day + ' m: ' + month + ' y: ' + year + ' h: ' + hour + ' m: ' + minute + ' s: ' + second);
-    console.log(today);
-    console.log(firstDate);
-    console.log(new Date());
-    console.log(new Date(year, month, day, hour, minute, second));
-    var difference = today - firstDate;
-    alert('Heute: ' + today + ' mit Difference: ' + difference + ' Then let\'s calc: ' + kwBeforeComma.val() + ' and ' + kwAfterComma.val());
+    var today = new Date().getTime(); // heute in Milliseconds
+    var firstDate = new Date(year, month, day, hour, minute, second).getTime(); // FirstDate in Milliseconds
+    var differenceDate = (today - firstDate) / (1000 * 3600 * 24); // in days
+    console.log('Difference: ' + differenceDate + ' days');
+
+    console.log(kwBeforeComma + ' ' + kwAfterComma + ' ' + firstKWhBeforeComma + ' ' + firstKWhAfterComma);
+    var differenceKWh = kwBeforeComma + kwAfterComma/100 - (firstKWhBeforeComma + firstKWhAfterComma/100);
+    console.log('Difference KWh: ' + differenceKWh);
 }
