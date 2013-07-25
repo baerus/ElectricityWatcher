@@ -22,7 +22,7 @@
             Früheste Ablese am:
             <input id="firstDate" type="text" readonly="true"/>
             mit KW/h:
-            <input id="firstKWhBeforeComma" type="number" class="kwFieldBeforeComma">
+            <input id="firstKWhBeforeComma" type="text" class="kwFieldBeforeComma">
             .
             <input  id="firstKWhAfterComma" type="number" class="kwFieldAfterComma">
         </div>
@@ -35,6 +35,27 @@
         </div>
         <button type="submit">Berechnen!</button>
     </form>
+
+    <div id="results" style="display: none">
+        <span>Ergebnisse:</span>
+        <div>
+            <span>Bishere Kosten seit frühester Ablese bis heute:</span>
+            <span id="totalPrice"></span>
+            <br>
+            <span>Durchschnittlicher KWh Verbrauch für 1 Monat:</span>
+            <span id="averageKWh1month"></span>
+            <br>
+            <span>Durchschnittliche Kosten für 1 Monat:</span>
+            <span id="averageprice1month"></span>
+            <br>
+            <span>Durchschnittlicher KWh Verbrauch für 1 Jahr:</span>
+            <span id="averageKWh1year"></span>
+            <br>
+            <span>Durchschnittliche Kosten für 1 Jahr:</span>
+            <span id="averageprice1year"></span>
+            <br>
+        </div>
+    </div>
     <div class="statisticAnker">
 	    <a href="newSites/nr2.html">Statistiken anschauen</a>
     </div>
