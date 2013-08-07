@@ -9,10 +9,11 @@ function openDB() {
 
 // Populate the database
 function populateDB(tx) {
-    tx.executeSql('DROP TABLE IF EXISTS DEMO');
+//    tx.executeSql('DROP TABLE IF EXISTS DEMO'); // Would delete it after F5...
     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT)');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+    tx.executeSql('INSERT INTO DEMO (id, data) VALUES (3, "Third row")');
 }
 
 function viewAllRows(tx) {
@@ -31,4 +32,11 @@ function querySuccess(tx, results) {
 function queryError(tx, error) {
     alert('Im QUERY ERROR');
     alert(error.message + ' ' + error.code);
+}
+
+function addRow() {
+    var db = openDB();
+    db.transaction(function(tx) {
+        tx.executeSql('INSERT INTO DEMO (data) VALUES ("Another row!")');
+    });
 }

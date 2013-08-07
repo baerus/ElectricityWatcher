@@ -1,13 +1,17 @@
 function bodyOnLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
 
+    var db = openDB();
+    // Populate DB
+    db.transaction(populateDB);
+    db.transaction(addRow);
+
     // DateTimePicker
     $(function() { $('#firstDate').datetimepicker({ dateFormat: 'dd.mm.yy', timeFormat: 'hh:mm:ss' }); });
 }
 
-// PhoneGap is ready. Populate DB
+// PhoneGap is ready.
 function onDeviceReady() {
-    var db = openDB();
-    db.transaction(populateDB);
+
 }
 
