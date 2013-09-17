@@ -30,6 +30,7 @@ function calculateKWPrice(firstDateString, firstKWhBeforeComma, firstKWhAfterCom
     var estimatedPriceFor1Year = estimatedKWhFor1Year * pricePerKWh + pricePerMonth * 12;
 
     var returnValues = {
+        totalKWh: parseInt(totalKWh),
         totalPriceUntilToday: parseInt(totalPriceUntilToday),
         estimatedKWhFor1Month: parseInt(estimatedKWhFor1Month),
         estimatedPriceFor1Month: parseInt(estimatedPriceFor1Month),
@@ -41,11 +42,12 @@ function calculateKWPrice(firstDateString, firstKWhBeforeComma, firstKWhAfterCom
 }
 
 function fillCalculatedData(returnValues) {
-    $('#totalPrice').text(returnValues.totalPriceUntilToday);
-    $('#averageKWh1month').text(returnValues.estimatedKWhFor1Month);
-    $('#averageprice1month').text(returnValues.estimatedPriceFor1Month);
-    $('#averageKWh1year').text(returnValues.estimatedKWhFor1Year);
-    $('#averageprice1year').text(returnValues.estimatedPriceFor1Year);
+    $('#totalKWh').text(returnValues.totalKWh + ' KW/h');
+    $('#totalPrice').text(returnValues.totalPriceUntilToday + ' Euro');
+    $('#averageKWh1month').text(returnValues.estimatedKWhFor1Month + ' KW/h');
+    $('#averageprice1month').text(returnValues.estimatedPriceFor1Month + ' Euro');
+    $('#averageKWh1year').text(returnValues.estimatedKWhFor1Year + ' KW/h');
+    $('#averageprice1year').text(returnValues.estimatedPriceFor1Year + ' Euro');
 
     $('#results').show();
 }
