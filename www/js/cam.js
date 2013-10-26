@@ -1,11 +1,5 @@
 function makeFoto() {
-    navigator.notification.confirm(
-        'Hi',
-        null,
-        'Titel',
-        'Done'
-    );
-
+    console.log('war hier');
     var options = {
         // sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
         destinationType: Camera.DestinationType.DATA_URL,
@@ -17,7 +11,7 @@ function makeFoto() {
 function onSuccess(imageData) {
     var image = document.getElementById('largeImage');
     image.src = "data:image/jpeg;base64," + imageData;
-    image.style.display = 'block';
+//    image.style.display = 'block';
 }
 
 function onFail(message) {
